@@ -1,6 +1,12 @@
-.form,
+form{
+    display: flex;
+    justify-content: center;
+
+}
+.js-form,
 .greeting {
     display: none;
+    justify-content: center;
 }
 
 .showing {
@@ -15,7 +21,95 @@
     z-index: -1;
     animation: fadeIn 2s linear;
 }
-
+.weatherDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+.js-weather{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: hidden;
+    height: 25px;
+    font-weight: bold;
+    background-color: rgba(250, 250, 250, 0.4);
+}
+.js-greeting{
+    display: flex;
+    font-size: 30px;
+}
+.js-clock{
+    display: flex;
+    align-items: center;
+    margin-left: 90px;
+}
+h1{
+    display: flex;
+    font-size: 90px;
+    letter-spacing: 18px;
+}
+h2{
+    display: flex;
+    font-size: 30px;
+    letter-spacing: 10px;
+}
+.Main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+input{
+    display: flex;
+    height: 30px;
+    width: 300px;
+    background-color: rgba(250, 250, 250, 0.1);
+    border: none;
+}
+::-webkit-input-placeholder {
+    display: flex;
+    font-weight: bold;
+    text-align: center;
+    font-size: 19px;
+    color: black;
+}
+.js-toDoList{
+    display: flex;
+    width: 800px;
+    margin-top: 30px;
+    flex-direction: column;
+}
+li{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.delBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    margin-right: 20px;
+    margin-left: 5px;
+    background-color: rgba(50, 50, 50, 0.8);
+    border-radius: 30%;
+    border: none;
+}
+i{
+    color: white;
+}
+#tododiv{
+    display: flex;
+    height: 60px;
+    margin-top: 10px;
+    padding-right: 5px;
+    padding-left: 30px;
+    background-color: rgba(250, 250, 250, 0.4);
+}
 @keyframes fadeIn {
     from {
     opacity: 0;

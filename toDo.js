@@ -5,14 +5,13 @@ const TODOS_LS = "toDos";
 
 let toDos = [];
 
-function filterFn(){
-
-}
-
 function deleteTodo(event) {
     const btn = event.target;
     const li = btn.parentNode;
-    toDoList.removeChild(li);
+    const div = li.parentNode;
+    
+    div.removeChild(li);
+    toDoList.removeChild(div);
     const cleanToDos = toDos.filter(function (toDo){
         return toDo.id !== parseInt(li.id);
     });
@@ -25,17 +24,27 @@ function saveTodos () {
 }
 
 function addingToDo (text) {
+    const div = document.createElement("div");
+    div.id = "tododiv";
     const li = document.createElement("li");
+    const delBtn = document.createElement("div");
+    delBtn.classList.add("delBtn");
+    const imo = document.createElement("i");
+    imo.classList.add("far");
+    imo.classList.add("fa-calendar-times");
     const span = document.createElement("span");
-    const delBtn = document.createElement("button");
     const newId = toDos.length + 1;
-    delBtn.innerHTML = "삭제";
     delBtn.addEventListener("click", deleteTodo);
     span.innerHTML = text;
-    toDoList.appendChild(li);
+
+    
+    toDoList.appendChild(div);
+    div.appendChild(li);
     li.appendChild(delBtn);
+    delBtn.appendChild(imo);
     li.appendChild(span);
     li.id = newId;
+
     const toDoObj = {
         text: text,
         id: newId
